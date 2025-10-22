@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chat Room</title>
+<link rel="stylesheet" href="/static/css/style.css" />
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script src="/static/js/chat.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Welcome, {{ username }}</h1>
+        <button id="logoutBtn">Logout</button>
+    </header>
+    <main>
+        <section class="chat-section">
+            <div id="chatBox" class="chat-box"></div>
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Type your message here..." autocomplete="off" />
+                <button id="sendBtn">Send</button>
+            </div>
+        </section>
+        <aside class="private-room-panel" id="privateRoomPanel">
+            <h2>Private Rooms</h2>
+            <div class="room-actions">
+                <h3>Create Room</h3>
+                <input type="text" id="createRoomName" placeholder="Room name" />
+                <input type="password" id="createRoomPassword" placeholder="Room password" />
+                <button id="createRoomBtn">Create</button>
+            </div>
+            <div class="room-actions">
+                <h3>Join Room</h3>
+                <input type="text" id="joinRoomName" placeholder="Room name" />
+                <input type="password" id="joinRoomPassword" placeholder="Room password" />
+                <button id="joinRoomBtn">Join</button>
+            </div>
+            <div id="privateRoomError" class="error-msg"></div>
+        </aside>
+    </main>
+    <button id="togglePrivateRooms" class="toggle-private-rooms">Private Rooms</button>
+</div>
+</body>
+</html>
